@@ -38,7 +38,10 @@
               <td><%= dataUser[i].lastName %></td>
               <td>
                 <button type="button">
-                  <a href="/user/detail/<%= dataUser[i].id %>" target="_blank">
+                  <a
+                    href="/api/v1/users/detail/<%= dataUser[i].id %>"
+                    target="_blank"
+                  >
                     Detail
                   </a>
                 </button>
