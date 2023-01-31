@@ -12,12 +12,20 @@
 //   console.log("Node.JS server is running on port: 3000");
 // });
 
-const express = require("express");
+// const express = require("express");
+import express from "express";
+import configViewEngine from "./configs/view-engine";
+require("dotenv").config();
+
+const path = require("path");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+configViewEngine(app);
 
 app.get("/", (req, res) => {
-  res.send("Hello World! My name is ...");
+  // res.sendFile(path.join(__dirname, "./index.html"));
+  res.render("index.ejs");
 });
 
 app.get("/about", (req, res) => {
