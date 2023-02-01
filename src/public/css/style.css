@@ -31,6 +31,11 @@ button a {
   text-decoration: none;
 }
 
+td button {
+  height: fit-content;
+  margin-right: 8px;
+}
+
 .create-user-container {
   text-align: center;
   margin-top: 32px;
