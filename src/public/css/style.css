@@ -30,3 +30,23 @@ body {
 button a {
   text-decoration: none;
 }
+
+.create-user-container {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.create-user-container .title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.create-user-container label {
+  display: block;
+}
+
+.create-user-container .btn-submit {
+  margin-top: 16px;
+  cursor: pointer;
+}
