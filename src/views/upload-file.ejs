@@ -13,38 +13,47 @@
       <a class="active" href="/api/v1/upload">Upload file</a>
     </div>
 
+    <h1>Handling File Upload using Express and Multer</h1>
+
     <div class="upload-file-container">
-      <form
-        action="/api/v1/upload-file"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <div>
-          <label>Avatar:</label>
-          <input type="file" name="file" />
-        </div>
+      <div>
+        <div class="title">Upload Single File</div>
+        <form
+          action="/api/v1/upload-file"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div>
+            <label>Select image:</label>
+            <input type="file" name="file" />
+          </div>
 
-        <div>
-          <button type="submit">Upload</button>
-        </div>
-      </form>
+          <div>
+            <button type="submit">Upload</button>
+          </div>
+        </form>
+      </div>
 
-      <form
-        method="POST"
-        action="/upload-multiple-images"
-        enctype="multipart/form-data"
-        style="margin-top: 32px"
-      >
-        <div>
-          <label>Select multiple images:</label>
-          <input type="file" name="multiple_images" multiple />
-        </div>
-        <div>
-          <button type="submit" name="btn_upload_multiple_images">
-            Upload
-          </button>
-        </div>
-      </form>
+      <hr />
+
+      <div>
+        <div class="title">Upload Multiple Files</div>
+        <form
+          method="POST"
+          action="/api/v1/upload-files"
+          enctype="multipart/form-data"
+        >
+          <div>
+            <label>Select multiple images:</label>
+            <input type="file" name="files" multiple />
+          </div>
+          <div>
+            <button type="submit" name="btn_upload_multiple_images">
+              Upload
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>

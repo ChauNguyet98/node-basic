@@ -35,6 +35,11 @@ let upload = multer({
   fileFilter: imageFilter,
 });
 
+let uploadMulti = multer({
+  storage: storage,
+  fileFilter: imageFilter,
+}).array("files", 3);
+
 const initWebRoute = (app) => {
   router.get("/", homeController.getHomePage);
 
@@ -52,6 +57,26 @@ const initWebRoute = (app) => {
     "/upload-file",
     upload.single("file"),
     uploadController.uploadFile
+  );
+
+  router.post(
+    "/upload-files",
+    (req, res, next) => {
+      uploadMulti(req, res, (error) => {
+        if (
+          error instanceof multer.MulterError &&
+          error.code === "LIMIT_UNEXPECTED_FILE"
+        ) {
+          // handle multer file limit error
+          res.send("LIMIT_UNEXPECTED_FILE");
+        } else if (error) {
+          res.send(error);
+        } else {
+          next();
+        }
+      });
+    },
+    uploadController.uploadFiles
   );
 
   return app.use("/api/v1", router);
