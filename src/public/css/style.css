@@ -55,3 +55,16 @@ td button {
   margin-top: 16px;
   cursor: pointer;
 }
+
+.upload-file-container {
+  padding: 16px;
+}
+
+.upload-file-container label {
+  display: block;
+}
+
+.upload-file-container button {
+  margin-top: 12px;
+  cursor: pointer;
+}

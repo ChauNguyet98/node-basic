@@ -12,7 +12,6 @@
 //   console.log("Node.JS server is running on port: 3000");
 // });
 
-// const express = require("express");
 import express from "express";
 import configViewEngine from "./configs/view-engine";
 import initWebRoute from "./route/web";
